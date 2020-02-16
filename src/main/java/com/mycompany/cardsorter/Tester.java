@@ -16,22 +16,19 @@ public class Tester {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        ArrayList<Card> cards = new ArrayList<>();
         
-        for(int i = 2; i < 15; i++) {
-            cards.add(new Card(i, "Spade"));
-            cards.add(new Card(i, "Club"));
-            cards.add(new Card(i, "Heart"));
-            cards.add(new Card(i, "Diamond"));
-        }
-        
-        Deck deck = new Deck(cards);
+        Deck deck = new Deck();
         deck.shuffle();
-        System.out.println("Card on top: " + deck.top());
+//        System.out.println("Card on top: " + deck.top());
         
-        System.out.println("Cards in deck: ");
-        cards.forEach((i) -> System.out.println(i));
+//        System.out.println("Cards in deck: ");
+//        deck.forEach((i) -> System.out.println(i));
+
+        Hand hand = new Hand();
+        hand.fill(deck);
+        System.out.println(hand.toString());
+        
+        
         
     }
     
