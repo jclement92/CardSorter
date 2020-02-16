@@ -15,12 +15,25 @@ import java.util.Random;
 public class Deck {
     private final ArrayList<Card> deck;
     
-    Deck(ArrayList<Card> deck) {
-        this.deck = deck;
+    Deck() {        
+        deck = new ArrayList<>(52);
+        
+        for(int i = 2; i < 15; i++) {
+            deck.add(new Card(i, "Spade"));
+            deck.add(new Card(i, "Club"));
+            deck.add(new Card(i, "Heart"));
+            deck.add(new Card(i, "Diamond"));
+        }
+
     }
     
     public Card top() {
-        return deck.get(deck.size()-1);
+        return deck.remove(0);
+    }
+    
+    // TO BE DELETED
+    public int size() {
+        return deck.size();
     }
     
     public void shuffle() {
