@@ -5,8 +5,6 @@
  */
 package com.mycompany.cardsorter;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author Chris
@@ -19,10 +17,6 @@ public class Tester {
         
         Deck deck = new Deck();
         deck.shuffle();
-//        System.out.println("Card on top: " + deck.top());
-        
-//        System.out.println("Cards in deck: ");
-//        deck.forEach((i) -> System.out.println(i));
 
         Hand hand = new Hand();
         hand.fill(deck);
