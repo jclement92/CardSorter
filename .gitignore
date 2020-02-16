@@ -33,4 +33,4 @@ nbdist/
 .nb-gradle/
 
 # MacOS files
-*.DS_Store
+*.DS_Store.DS_Store
