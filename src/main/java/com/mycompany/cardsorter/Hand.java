@@ -13,13 +13,15 @@ import java.util.ArrayList;
  */
 public class Hand {
     private final ArrayList<Card> hand;
+    private final static Deck DECK = new Deck();
     
     Hand() {
         hand = new ArrayList<>(13);
     }
     
-    public void fill(Deck deck) {
+    public void fill() {
         // Should work
+        DECK.shuffle();
         ArrayList<Card> spade = new ArrayList<>();
         ArrayList<Card> club = new ArrayList<>();
         ArrayList<Card> heart = new ArrayList<>();
@@ -29,7 +31,7 @@ public class Hand {
         
         loop:
         for(int i = 0; i < 13; i++) {
-            card = deck.top();
+            card = DECK.top();
             switch (card.getSuit()) {
                 case "Spade":
                     if(spade.isEmpty()) {
