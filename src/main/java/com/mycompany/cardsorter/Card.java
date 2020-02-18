@@ -9,29 +9,29 @@ package com.mycompany.cardsorter;
  *
  * @author Chris
  */
-public class Card {
-    private final int rank;
-    private final String suit;
+public abstract class Card {
+    private final int RANK;
+    private final String SUIT;
     
     Card(int rank, String suit) {
-        this.rank = rank;
-        this.suit = suit;
+        RANK = rank;
+        SUIT = suit;
     }
     
     public int getRank() {
-        return rank;
+        return RANK;
     }
     
     public String getSuit() {
-        return suit;
+        return SUIT;
     }
     
     @Override
     public String toString() {
         char temp = '\u0000';
         
-        String rankStr = String.valueOf(rank);
-        switch (rank) {
+        String rankStr = String.valueOf(RANK);
+        switch (RANK) {
             case 11:
                 rankStr = "J";
                 break;
@@ -48,13 +48,13 @@ public class Card {
                 break;
         }
 
-        if(suit.equalsIgnoreCase("Spade")) {
+        if(SUIT.equalsIgnoreCase("Spade")) {
             temp = '\u2660';
-        } else if(suit.equalsIgnoreCase("Club")) {
+        } else if(SUIT.equalsIgnoreCase("Club")) {
             temp = '\u2663';
-        } else if(suit.equalsIgnoreCase("Heart")) {
+        } else if(SUIT.equalsIgnoreCase("Heart")) {
             temp = '\u2665';
-        } else if(suit.equalsIgnoreCase("Diamond")) {
+        } else if(SUIT.equalsIgnoreCase("Diamond")) {
             temp = '\u2666';
         }
         

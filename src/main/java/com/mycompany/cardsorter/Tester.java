@@ -5,7 +5,7 @@
  */
 package com.mycompany.cardsorter;
 
-import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -16,23 +16,25 @@ public class Tester {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        ArrayList<Card> cards = new ArrayList<>();
-        
-        for(int i = 2; i < 15; i++) {
-            cards.add(new Card(i, "Spade"));
-            cards.add(new Card(i, "Club"));
-            cards.add(new Card(i, "Heart"));
-            cards.add(new Card(i, "Diamond"));
+
+        boolean choice = false;
+        Scanner scan = new Scanner(System.in);
+        String input;
+
+        Hand hand;
+
+        while(!choice) {
+            hand = new Hand();
+            hand.fill();
+            // TODO #1: Convert to JOptionPane
+            System.out.println("Here is your hand: ");
+            System.out.println(hand.toString());
+            System.out.println("Would you like to see another? (Type Yes/No)");
+            input = scan.next();
+            if(input.equalsIgnoreCase("No")) {
+                choice = true;
+            }
         }
         
-        Deck deck = new Deck(cards);
-        deck.shuffle();
-        System.out.println("Card on top: " + deck.top());
-        
-        System.out.println("Cards in deck: ");
-        cards.forEach((i) -> System.out.println(i));
-        
     }
-    
 }
