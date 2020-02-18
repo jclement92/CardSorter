@@ -12,19 +12,24 @@ import java.util.Random;
  *
  * @author Chris
  */
-public class Deck {
+public final class Deck {
     private final ArrayList<Card> deck;
+    
+    private final static String SPADE = "Spade";
+    private final static String CLUB = "Club";
+    private final static String HEART = "Heart";
+    private final static String DIAMOND = "Diamond";
     
     Deck() {        
         deck = new ArrayList<>(52);
         
         for(int i = 2; i < 15; i++) {
-            deck.add(new Card(i, "Spade"));
-            deck.add(new Card(i, "Club"));
-            deck.add(new Card(i, "Heart"));
-            deck.add(new Card(i, "Diamond"));
+            deck.add(new Card(i, SPADE) {});
+            deck.add(new Card(i, CLUB) {});
+            deck.add(new Card(i, HEART) {});
+            deck.add(new Card(i, DIAMOND) {});
         }
-
+        shuffle();
     }
     
     public Card top() {
