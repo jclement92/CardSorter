@@ -9,7 +9,7 @@ package com.mycompany.cardsorter;
  *
  * @author Chris
  */
-public class Card {
+public abstract class Card {
     private final int RANK;
     private final String SUIT;
     
